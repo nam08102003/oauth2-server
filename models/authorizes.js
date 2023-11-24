@@ -9,15 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Authorizes.belongsTo(models.User);
     }
   }
   Authorizes.init(
     {
       clientId: DataTypes.STRING,
-      userId: {
-        type: DataTypes.STRING,
-        references: "User",
-      },
+      userId: DataTypes.INTEGER,
+
       code: DataTypes.STRING,
       expiresAt: DataTypes.DATE,
     },

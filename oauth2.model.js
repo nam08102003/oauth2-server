@@ -67,10 +67,10 @@ async function revokeAuthorizationCode({ code }) {
 /**
  * Revoke a refresh token.
  */
-async function revokeToken({ refreshToken }) {
-  const res = await OAuthAccessTokensModel.deleteOne({ refreshToken });
-  return res.deletedCount === 1;
-}
+// async function revokeToken({ refreshToken }) {
+//   const res = await OAuthAccessTokensModel.deleteOne({ refreshToken });
+//   return res.deletedCount === 1;
+// }
 
 /**
  * Save token.
@@ -129,5 +129,4 @@ module.exports = {
   saveAuthorizationCode,
   saveToken,
   revokeAuthorizationCode,
-  revokeToken,
 };

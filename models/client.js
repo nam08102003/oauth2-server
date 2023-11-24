@@ -9,18 +9,14 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Client.belongsTo(models.User);
     }
   }
   Client.init(
     {
       name: DataTypes.STRING,
-      userId: {
-        type: DataTypes.STRING,
-        references: "User",
-      },
-      clientId: {
-        type: DataTypes.STRING,
-      },
+      userId: DataTypes.INTEGER,
+      clientId: DataTypes.STRING,
       clientSecret: DataTypes.STRING,
       callbackUrl: DataTypes.STRING,
     },

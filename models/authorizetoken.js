@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      AuthorizeToken.belongsTo(models.User);
     }
   }
   AuthorizeToken.init(
@@ -16,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
       accessToken: DataTypes.STRING,
       accessTokenExpiresAt: DataTypes.DATE,
       clientId: DataTypes.STRING,
-      userId: DataTypes.STRING,
+      userId: DataTypes.INTEGER,
     },
     {
       sequelize,
