@@ -9,7 +9,9 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      AuthorizeToken.belongsTo(models.User);
+      AuthorizeToken.belongsTo(models.User, {
+        foreignKey: "userId",
+      });
     }
   }
   AuthorizeToken.init(
