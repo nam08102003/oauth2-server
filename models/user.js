@@ -8,10 +8,10 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      User.hasMany(models.Client);
+      this.hasMany(models.Client);
 
-      User.hasMany(models.Authorizes);
-      User.hasMany(models.AuthorizeToken);
+      this.hasMany(models.Authorizes);
+      this.hasMany(models.AuthorizeToken);
     }
   }
   User.init(
